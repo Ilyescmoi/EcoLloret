@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Lloret | Gamifier le tri</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neon-green': '#39ff14',
+                        'neon-purple': '#bc13fe',
+                        'dark-bg': '#0f0f13',
+                        'card-bg': '#1a1a20'
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body { font-family: 'Outfit', sans-serif; }
+        .text-glow { text-shadow: 0 0 10px rgba(57, 255, 20, 0.5); }
+        .purple-glow { text-shadow: 0 0 15px rgba(188, 19, 254, 0.6); }
+        .gradient-text {
+            background: linear-gradient(to right, #39ff14, #bc13fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-gray-200">
+
+<nav class="fixed w-full z-50 bg-dark-bg/90 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+            <div class="flex-shrink-0">
+                <span class="text-2xl font-black tracking-tighter text-white">ECO-<span class="text-neon-green">LLORET</span></span>
+            </div>
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-4">
+                    <a href="#concept" class="hover:text-neon-green px-3 py-2 rounded-md text-sm font-medium transition">Le Concept</a>
+                    <a href="#how" class="hover:text-neon-green px-3 py-2 rounded-md text-sm font-medium transition">Gameplay</a>
+                    <a href="#rewards" class="hover:text-neon-green px-3 py-2 rounded-md text-sm font-medium transition">Loot</a>
+                    <button class="bg-neon-purple hover:bg-purple-600 text-white font-bold py-2 px-6 rounded-full transition shadow-[0_0_15px_rgba(188,19,254,0.5)]">
+                        Télécharger l'App
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?q=80&w=2070&auto=format&fit=crop" alt="Party Lloret" class="w-full h-full object-cover opacity-40">
+        <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/80 to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+        <div class="inline-block px-4 py-1 mb-6 border border-neon-green/50 rounded-full bg-green-900/20 backdrop-blur-sm">
+            <span class="text-neon-green font-bold text-sm tracking-wide uppercase"><i class="fas fa-bolt mr-2"></i>Bêta dispo sur iOS & Android</span>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
+            Tes déchets paient <br>
+            <span class="purple-glow text-neon-purple">TA SOIRÉE.</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto font-light">
+            Ne jette plus par obligation. Trie pour la gratification. <br>Transforme chaque canette en entrée VIP à Lloret.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <button class="bg-neon-green text-black font-black py-4 px-10 rounded-full text-lg hover:scale-105 transition transform shadow-[0_0_20px_rgba(57,255,20,0.6)]">
+                <i class="fas fa-qrcode mr-2"></i> COMMENCER À SCANNER
+            </button>
+            <button class="border border-white/20 hover:border-white hover:bg-white/5 text-white font-bold py-4 px-10 rounded-full text-lg transition">
+                Voir la démo
+            </button>
+        </div>
+    </div>
+</section>
+
+<div class="border-y border-white/10 bg-card-bg py-6">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+            <div class="text-3xl font-black text-white">2.5 T</div>
+            <div class="text-sm text-gray-400 uppercase tracking-widest">Déchets Recyclés</div>
+        </div>
+        <div>
+            <div class="text-3xl font-black text-white">15k €</div>
+            <div class="text-sm text-gray-400 uppercase tracking-widest">Rewards Distribués</div>
+        </div>
+        <div>
+            <div class="text-3xl font-black text-white">50+</div>
+            <div class="text-sm text-gray-400 uppercase tracking-widest">Clubs Partenaires</div>
+        </div>
+        <div>
+            <div class="text-3xl font-black text-white">100%</div>
+            <div class="text-sm text-gray-400 uppercase tracking-widest">Validé par l'IA</div>
+        </div>
+    </div>
+</div>
+
+<section id="concept" class="py-20 bg-dark-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <div class="absolute -inset-4 bg-gradient-to-r from-neon-green to-neon-purple opacity-30 blur-2xl rounded-full"></div>
+                <img src="https://images.unsplash.com/photo-1528323273322-d81458248d40?q=80&w=2129&auto=format&fit=crop" alt="Trash on beach vs Club" class="relative rounded-2xl shadow-2xl border border-white/10 grayscale hover:grayscale-0 transition duration-500 transform hover:scale-[1.02]">
+            </div>
+            <div>
+                <h2 class="text-4xl font-black text-white mb-6">Sauve la plage, <span class="text-neon-green">gagne le club.</span></h2>
+                <p class="text-gray-400 text-lg mb-6 leading-relaxed">
+                    Lloret est notre terrain de jeu. Mais personne n'aime danser au milieu des déchets. Le deal est simple : Tu nettoies la ville, la ville te le rend bien.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-gray-800 p-3 rounded-lg text-neon-green">
+                            <i class="fas fa-trash-alt text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-xl font-bold text-white">Stop au Gâchis</h4>
+                            <p class="text-gray-400 text-sm">Une canette vide n'est pas un déchet, c'est de l'or qui traîne.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-gray-800 p-3 rounded-lg text-neon-purple">
+                            <i class="fas fa-cocktail text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-xl font-bold text-white">Pouvoir d'achat</h4>
+                            <p class="text-gray-400 text-sm">Finance tes sorties simplement en faisant le bon geste.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="how" class="py-20 bg-card-bg relative overflow-hidden">
+    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-neon-purple/10 rounded-full blur-3xl"></div>
+
+    <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+        <h2 class="text-4xl font-black text-white mb-16">LE <span class="gradient-text">GAMEPLAY</span></h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-dark-bg p-8 rounded-2xl border border-white/5 hover:border-neon-green/50 transition duration-300 group">
+                <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-neon-green group-hover:text-black transition-colors text-3xl text-white">
+                    <i class="fas fa-expand"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">1. Scan & Target</h3>
+                <p class="text-gray-400">Scanne le code-barres de ton déchet ou le QR Code de la Smart-Bin.</p>
+            </div>
+
+            <div class="bg-dark-bg p-8 rounded-2xl border border-white/5 hover:border-neon-purple/50 transition duration-300 group">
+                <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-neon-purple group-hover:text-white transition-colors text-3xl text-white">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">2. Drop & Verify</h3>
+                <p class="text-gray-400">Jette dans la poubelle. L'IA et les capteurs valident que tu ne triches pas.</p>
+            </div>
+
+            <div class="bg-dark-bg p-8 rounded-2xl border border-white/5 hover:border-yellow-400/50 transition duration-300 group">
+                <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-yellow-400 group-hover:text-black transition-colors text-3xl text-white">
+                    <i class="fas fa-fire"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">3. Burn & Earn</h3>
+                <p class="text-gray-400">Reçois tes Eco-Points instantanément et brûle-les pour des rewards.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-20 bg-dark-bg border-y border-white/5">
+    <div class="max-w-5xl mx-auto px-4 bg-gray-900 rounded-3xl p-10 border border-white/10 relative">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div>
+                <h3 class="text-neon-green font-bold tracking-widest uppercase mb-2">Anti-Cheat System</h3>
+                <h2 class="text-3xl font-black text-white mb-4">Plus intelligent que ton ex.</h2>
+                <p class="text-gray-400 mb-6">
+                    Notre technologie de pointe assure l'intégrité du jeu. Pas de triche possible.
+                </p>
+                <ul class="space-y-3">
+                    <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-neon-purple mr-3"></i> IA Vision (Reconnaissance d'image)</li>
+                    <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-neon-purple mr-3"></i> Capteurs acoustiques & de poids</li>
+                    <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-neon-purple mr-3"></i> Peer-Review Social</li>
+                </ul>
+            </div>
+            <div class="relative bg-black rounded-xl h-64 flex items-center justify-center border border-gray-700">
+                <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')] opacity-20"></div>
+                <div class="text-center">
+                    <i class="fas fa-microchip text-6xl text-gray-600 animate-pulse"></i>
+                    <p class="mt-4 font-mono text-xs text-neon-green">SYSTEM_ACTIVE: SCANNING...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="rewards" class="py-20 bg-card-bg">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <h2 class="text-4xl font-black text-white mb-4">LE <span class="text-yellow-400">LOOT SHOP</span></h2>
+        <p class="text-gray-400 mb-12">Voici ce que tu peux t'offrir ce soir.</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div class="bg-dark-bg rounded-xl overflow-hidden border border-white/5 hover:scale-105 transition duration-300">
+                <div class="h-40 bg-gray-700 relative">
+                    <img src="https://images.unsplash.com/photo-1575444758702-4a6b9222336e?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover">
+                    <span class="absolute top-2 right-2 bg-yellow-400 text-black font-bold px-2 py-1 rounded text-xs">HOT</span>
+                </div>
+                <div class="p-6 text-left">
+                    <h4 class="text-xl font-bold text-white">1 Cerveza Offerte</h4>
+                    <p class="text-gray-500 text-sm mb-4">Chez Bar Example • Lloret Centre</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-neon-green font-bold">500 XP</span>
+                        <button class="text-white text-sm bg-white/10 px-3 py-1 rounded hover:bg-white/20">Réserver</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-dark-bg rounded-xl overflow-hidden border border-white/5 hover:scale-105 transition duration-300 border-neon-purple/30">
+                <div class="h-40 bg-gray-700 relative">
+                    <img src="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?q=80&w=2029&auto=format&fit=crop" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6 text-left">
+                    <h4 class="text-xl font-bold text-white">Entrée VIP + Coupe-file</h4>
+                    <p class="text-gray-500 text-sm mb-4">Disco Tropics • Main Floor</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-neon-green font-bold">1500 XP</span>
+                        <button class="text-white text-sm bg-neon-purple px-3 py-1 rounded hover:bg-purple-600">CLAIM</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-dark-bg rounded-xl overflow-hidden border border-white/5 hover:scale-105 transition duration-300">
+                <div class="h-40 bg-gray-700 relative">
+                    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1965&auto=format&fit=crop" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6 text-left">
+                    <h4 class="text-xl font-bold text-white">-50% Menu Burger</h4>
+                    <p class="text-gray-500 text-sm mb-4">Burger King • Front de mer</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-neon-green font-bold">2000 XP</span>
+                        <button class="text-white text-sm bg-white/10 px-3 py-1 rounded hover:bg-white/20">Réserver</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-dark-bg py-10 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <h2 class="text-2xl font-black text-white mb-6">Prêt à changer la donne ?</h2>
+        <button class="bg-neon-green text-black font-bold py-3 px-8 rounded-full mb-8 hover:bg-green-400 transition">
+            Rejoins la Squad Eco-Lloret
+        </button>
+        <p class="text-gray-600 text-sm">
+            © 2024 Eco-Lloret Project. Fabriqué avec <i class="fas fa-heart text-red-500"></i> et <i class="fas fa-recycle text-green-500"></i> sous le soleil.
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
