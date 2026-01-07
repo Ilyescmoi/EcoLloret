@@ -26,7 +26,6 @@
     </script>
 
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         body { font-family: 'Outfit', sans-serif; }
@@ -37,6 +36,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        /* Style flèche select */
         select {
             -webkit-appearance: none;
             -moz-appearance: none;
@@ -77,19 +77,20 @@
 
                 <div class="md:hidden">
                     <button id="mobile-menu-btn" class="text-white hover:text-neon-green focus:outline-none p-2">
-                        <i class="fas fa-bars text-2xl"></i>
+                        <svg id="icon-menu" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                        <svg id="icon-close" class="w-8 h-8 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                     </button>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="mobile-menu" class="hidden md:hidden bg-dark-bg border-b border-white/10 absolute w-full">
+    <div id="mobile-menu" class="hidden md:hidden bg-dark-bg border-b border-white/10 absolute w-full shadow-2xl">
         <div class="px-4 pt-2 pb-6 space-y-2">
-            <a href="#concept" class="mobile-link block text-gray-300 hover:text-neon-green hover:bg-gray-800 px-3 py-3 rounded-md text-base font-bold" data-i18n="nav_concept">Le Concept</a>
-            <a href="#how" class="mobile-link block text-gray-300 hover:text-neon-green hover:bg-gray-800 px-3 py-3 rounded-md text-base font-bold" data-i18n="nav_gameplay">Gameplay</a>
-            <a href="#rewards" class="mobile-link block text-gray-300 hover:text-neon-green hover:bg-gray-800 px-3 py-3 rounded-md text-base font-bold" data-i18n="nav_loot">Loot</a>
-            <button class="w-full text-left mt-4 bg-neon-purple text-white font-bold py-3 px-4 rounded-lg shadow-[0_0_10px_rgba(188,19,254,0.3)]" data-i18n="nav_download">
+            <a href="#concept" class="mobile-link block text-gray-300 hover:text-neon-green hover:bg-gray-800 px-3 py-3 rounded-md text-base font-bold transition" data-i18n="nav_concept">Le Concept</a>
+            <a href="#how" class="mobile-link block text-gray-300 hover:text-neon-green hover:bg-gray-800 px-3 py-3 rounded-md text-base font-bold transition" data-i18n="nav_gameplay">Gameplay</a>
+            <a href="#rewards" class="mobile-link block text-gray-300 hover:text-neon-green hover:bg-gray-800 px-3 py-3 rounded-md text-base font-bold transition" data-i18n="nav_loot">Loot</a>
+            <button class="w-full text-left mt-4 bg-neon-purple text-white font-bold py-3 px-4 rounded-lg shadow-[0_0_10px_rgba(188,19,254,0.3)] hover:bg-purple-600 transition" data-i18n="nav_download">
                 Télécharger l'App
             </button>
         </div>
@@ -103,10 +104,9 @@
     </div>
 
     <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
-        <div class="inline-block px-4 py-1 mb-6 border border-neon-green/50 rounded-full bg-green-900/20 backdrop-blur-sm">
-                <span class="text-neon-green font-bold text-sm tracking-wide uppercase">
-                    <i class="fas fa-bolt mr-2"></i><span data-i18n="hero_beta">Bêta dispo sur iOS & Android</span>
-                </span>
+        <div class="inline-flex items-center px-4 py-1 mb-6 border border-neon-green/50 rounded-full bg-green-900/20 backdrop-blur-sm">
+            <svg class="w-4 h-4 text-neon-green mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path></svg>
+            <span class="text-neon-green font-bold text-sm tracking-wide uppercase" data-i18n="hero_beta">Bêta dispo sur iOS & Android</span>
         </div>
         <h1 class="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
             <span data-i18n="hero_h1_1">Tes déchets paient</span> <br>
@@ -116,8 +116,9 @@
             Ne jette plus par obligation. Trie pour la gratification. <br>Transforme chaque canette en entrée VIP à Lloret.
         </p>
         <div class="flex flex-col md:flex-row gap-4 justify-center">
-            <button class="bg-neon-green text-black font-black py-4 px-10 rounded-full text-lg hover:scale-105 transition transform shadow-[0_0_20px_rgba(57,255,20,0.6)]">
-                <i class="fas fa-qrcode mr-2"></i> <span data-i18n="cta_scan">COMMENCER À SCANNER</span>
+            <button class="bg-neon-green text-black font-black py-4 px-10 rounded-full text-lg hover:scale-105 transition transform shadow-[0_0_20px_rgba(57,255,20,0.6)] flex items-center justify-center">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4h2v-4zm-6 2v3m-4-3v3m4-9a2 2 0 01-2-2V5a2 2 0 012-2h4a2 2 0 012 2v4a2 2 0 01-2 2H6zM6 20v-4a2 2 0 012-2h4a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2zm12-9a2 2 0 01-2-2V5a2 2 0 012-2h4a2 2 0 012 2v4a2 2 0 01-2 2h-4z"></path></svg>
+                <span data-i18n="cta_scan">COMMENCER À SCANNER</span>
             </button>
             <button class="border border-white/20 hover:border-white hover:bg-white/5 text-white font-bold py-4 px-10 rounded-full text-lg transition" data-i18n="cta_demo">
                 Voir la démo
@@ -165,7 +166,7 @@
                 <div class="space-y-4">
                     <div class="flex items-start">
                         <div class="flex-shrink-0 bg-gray-800 p-3 rounded-lg text-neon-green">
-                            <i class="fas fa-trash-alt text-xl"></i>
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                         </div>
                         <div class="ml-4">
                             <h4 class="text-xl font-bold text-white" data-i18n="concept_sub1_title">Stop au Gâchis</h4>
@@ -174,7 +175,7 @@
                     </div>
                     <div class="flex items-start">
                         <div class="flex-shrink-0 bg-gray-800 p-3 rounded-lg text-neon-purple">
-                            <i class="fas fa-cocktail text-xl"></i>
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
                         <div class="ml-4">
                             <h4 class="text-xl font-bold text-white" data-i18n="concept_sub2_title">Pouvoir d'achat</h4>
@@ -193,22 +194,22 @@
         <h2 class="text-4xl font-black text-white mb-16">LE <span class="gradient-text" data-i18n="gameplay_title">GAMEPLAY</span></h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="bg-dark-bg p-8 rounded-2xl border border-white/5 hover:border-neon-green/50 transition duration-300 group">
-                <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-neon-green group-hover:text-black transition-colors text-3xl text-white">
-                    <i class="fas fa-expand"></i>
+                <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-neon-green group-hover:text-black transition-colors text-white">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
                 </div>
                 <h3 class="text-2xl font-bold text-white mb-4">1. Scan & Target</h3>
                 <p class="text-gray-400" data-i18n="step1_desc">Scanne le code-barres de ton déchet ou le QR Code de la Smart-Bin.</p>
             </div>
             <div class="bg-dark-bg p-8 rounded-2xl border border-white/5 hover:border-neon-purple/50 transition duration-300 group">
-                <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-neon-purple group-hover:text-white transition-colors text-3xl text-white">
-                    <i class="fas fa-robot"></i>
+                <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-neon-purple group-hover:text-white transition-colors text-white">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                 </div>
                 <h3 class="text-2xl font-bold text-white mb-4">2. Drop & Verify</h3>
                 <p class="text-gray-400" data-i18n="step2_desc">Jette dans la poubelle. L'IA et les capteurs valident que tu ne triches pas.</p>
             </div>
             <div class="bg-dark-bg p-8 rounded-2xl border border-white/5 hover:border-yellow-400/50 transition duration-300 group">
-                <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-yellow-400 group-hover:text-black transition-colors text-3xl text-white">
-                    <i class="fas fa-fire"></i>
+                <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-yellow-400 group-hover:text-black transition-colors text-white">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path></svg>
                 </div>
                 <h3 class="text-2xl font-bold text-white mb-4">3. Burn & Earn</h3>
                 <p class="text-gray-400" data-i18n="step3_desc">Reçois tes Eco-Points instantanément et brûle-les pour des rewards.</p>
@@ -227,15 +228,24 @@
                     Notre technologie de pointe assure l'intégrité du jeu. Pas de triche possible.
                 </p>
                 <ul class="space-y-3">
-                    <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-neon-purple mr-3"></i> <span data-i18n="tech_list1">IA Vision (Reconnaissance d'image)</span></li>
-                    <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-neon-purple mr-3"></i> <span data-i18n="tech_list2">Capteurs acoustiques & de poids</span></li>
-                    <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-neon-purple mr-3"></i> <span data-i18n="tech_list3">Peer-Review Social</span></li>
+                    <li class="flex items-center text-gray-300">
+                        <svg class="w-5 h-5 text-neon-purple mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span data-i18n="tech_list1">IA Vision (Reconnaissance d'image)</span>
+                    </li>
+                    <li class="flex items-center text-gray-300">
+                        <svg class="w-5 h-5 text-neon-purple mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span data-i18n="tech_list2">Capteurs acoustiques & de poids</span>
+                    </li>
+                    <li class="flex items-center text-gray-300">
+                        <svg class="w-5 h-5 text-neon-purple mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span data-i18n="tech_list3">Peer-Review Social</span>
+                    </li>
                 </ul>
             </div>
             <div class="relative bg-black rounded-xl h-64 flex items-center justify-center border border-gray-700">
                 <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')] opacity-20"></div>
                 <div class="text-center">
-                    <i class="fas fa-microchip text-6xl text-gray-600 animate-pulse"></i>
+                    <svg class="w-16 h-16 text-gray-600 animate-pulse mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
                     <p class="mt-4 font-mono text-xs text-neon-green">SYSTEM_ACTIVE: SCANNING...</p>
                 </div>
             </div>
@@ -301,8 +311,12 @@
         <button class="bg-neon-green text-black font-bold py-3 px-8 rounded-full mb-8 hover:bg-green-400 transition" data-i18n="footer_cta">
             Rejoins la Squad Eco-Lloret
         </button>
-        <p class="text-gray-600 text-sm" data-i18n="footer_copy">
-            © 2024 Eco-Lloret Project. Fabriqué avec <i class="fas fa-heart text-red-500"></i> et <i class="fas fa-recycle text-green-500"></i> sous le soleil.
+        <p class="text-gray-600 text-sm flex items-center justify-center gap-2">
+            <span data-i18n="footer_copy_start">© 2026 Eco-Lloret. Made with</span>
+            <svg class="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
+            <span>&</span>
+            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"></path></svg>
+            <span data-i18n="footer_copy_end">under the sun.</span>
         </p>
     </div>
 </footer>
@@ -349,7 +363,8 @@
             btn_reserve: "Réserver",
             footer_title: "Prêt à changer la donne ?",
             footer_cta: "Rejoins la Squad Eco-Lloret",
-            footer_copy: "© 2024 Eco-Lloret Project. Fabriqué avec <i class='fas fa-heart text-red-500'></i> et <i class='fas fa-recycle text-green-500'></i> sous le soleil."
+            footer_copy_start: "© 2026 Eco-Lloret. Fabriqué avec",
+            footer_copy_end: "sous le soleil."
         },
         en: {
             nav_concept: "The Concept",
@@ -390,7 +405,8 @@
             btn_reserve: "Reserve",
             footer_title: "Ready to change the game?",
             footer_cta: "Join the Eco-Lloret Squad",
-            footer_copy: "© 2024 Eco-Lloret Project. Made with <i class='fas fa-heart text-red-500'></i> and <i class='fas fa-recycle text-green-500'></i> under the sun."
+            footer_copy_start: "© 2026 Eco-Lloret. Made with",
+            footer_copy_end: "under the sun."
         },
         es: {
             nav_concept: "El Concepto",
@@ -431,7 +447,8 @@
             btn_reserve: "Reservar",
             footer_title: "¿Listo para cambiar el juego?",
             footer_cta: "Únete al Squad Eco-Lloret",
-            footer_copy: "© 2024 Eco-Lloret Project. Hecho con <i class='fas fa-heart text-red-500'></i> y <i class='fas fa-recycle text-green-500'></i> bajo el sol."
+            footer_copy_start: "© 2026 Eco-Lloret. Hecho con",
+            footer_copy_end: "bajo el sol."
         }
     };
 
@@ -455,19 +472,20 @@
     // --- 2. GESTION DU MENU MOBILE ---
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
-    const icon = btn.querySelector('i');
+    const iconMenu = document.getElementById('icon-menu');
+    const iconClose = document.getElementById('icon-close');
     const mobileLinks = document.querySelectorAll('.mobile-link');
 
     // Toggle Open/Close
     btn.addEventListener('click', () => {
         menu.classList.toggle('hidden');
-        // Change icone (Bars vs Times/Cross)
+        // Toggle icones
         if(menu.classList.contains('hidden')){
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
+            iconMenu.classList.remove('hidden');
+            iconClose.classList.add('hidden');
         } else {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
+            iconMenu.classList.add('hidden');
+            iconClose.classList.remove('hidden');
         }
     });
 
@@ -475,8 +493,8 @@
     mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
             menu.classList.add('hidden');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
+            iconMenu.classList.remove('hidden');
+            iconClose.classList.add('hidden');
         });
     });
 </script>
