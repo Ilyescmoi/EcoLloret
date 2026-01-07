@@ -37,26 +37,61 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 0.5rem center;
+            background-size: 1em;
+        }
     </style>
 </head>
 <body class="bg-dark-bg text-gray-200">
 
-<nav class="fixed w-full z-50 bg-dark-bg/90 backdrop-blur-md border-b border-white/10">
+<nav class="fixed w-full z-50 bg-dark-bg/95 backdrop-blur-md border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
-            <div class="flex-shrink-0">
-                <span class="text-2xl font-black tracking-tighter text-white">ECO-<span class="text-neon-green">LLORET</span></span>
+
+            <div class="flex-shrink-0 flex items-center">
+                <a href="#" class="text-2xl font-black tracking-tighter text-white">ECO-<span class="text-neon-green">LLORET</span></a>
             </div>
-            <div class="hidden md:block">
-                <div class="ml-10 flex items-baseline space-x-4">
-                    <a href="#concept" class="hover:text-neon-green px-3 py-2 rounded-md text-sm font-medium transition">Le Concept</a>
-                    <a href="#how" class="hover:text-neon-green px-3 py-2 rounded-md text-sm font-medium transition">Gameplay</a>
-                    <a href="#rewards" class="hover:text-neon-green px-3 py-2 rounded-md text-sm font-medium transition">Loot</a>
-                    <button class="bg-neon-purple hover:bg-purple-600 text-white font-bold py-2 px-6 rounded-full transition shadow-[0_0_15px_rgba(188,19,254,0.5)]">
+
+            <div class="flex items-center gap-4">
+
+                <select id="language-selector" class="bg-gray-800 text-white text-sm font-bold py-2 pl-3 pr-8 rounded-lg border border-white/20 hover:border-neon-green focus:outline-none focus:border-neon-green transition cursor-pointer">
+                    <option value="fr">🇫🇷 FR</option>
+                    <option value="en">🇬🇧 EN</option>
+                    <option value="es">🇪🇸 ES</option>
+                </select>
+
+                <div class="hidden md:flex items-baseline space-x-4">
+                    <a href="#concept" class="hover:text-neon-green px-3 py-2 rounded-md text-sm font-medium transition" data-i18n="nav_concept">Le Concept</a>
+                    <a href="#how" class="hover:text-neon-green px-3 py-2 rounded-md text-sm font-medium transition" data-i18n="nav_gameplay">Gameplay</a>
+                    <a href="#rewards" class="hover:text-neon-green px-3 py-2 rounded-md text-sm font-medium transition" data-i18n="nav_loot">Loot</a>
+                    <button class="bg-neon-purple hover:bg-purple-600 text-white font-bold py-2 px-6 rounded-full transition shadow-[0_0_15px_rgba(188,19,254,0.5)]" data-i18n="nav_download">
                         Télécharger l'App
                     </button>
                 </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-white hover:text-neon-green focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-dark-bg border-b border-white/10 absolute w-full">
+        <div class="px-4 pt-2 pb-6 space-y-2">
+            <a href="#concept" class="mobile-link block text-gray-300 hover:text-neon-green hover:bg-gray-800 px-3 py-3 rounded-md text-base font-bold" data-i18n="nav_concept">Le Concept</a>
+            <a href="#how" class="mobile-link block text-gray-300 hover:text-neon-green hover:bg-gray-800 px-3 py-3 rounded-md text-base font-bold" data-i18n="nav_gameplay">Gameplay</a>
+            <a href="#rewards" class="mobile-link block text-gray-300 hover:text-neon-green hover:bg-gray-800 px-3 py-3 rounded-md text-base font-bold" data-i18n="nav_loot">Loot</a>
+            <button class="w-full text-left mt-4 bg-neon-purple text-white font-bold py-3 px-4 rounded-lg shadow-[0_0_10px_rgba(188,19,254,0.3)]" data-i18n="nav_download">
+                Télécharger l'App
+            </button>
         </div>
     </div>
 </nav>
@@ -69,20 +104,22 @@
 
     <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
         <div class="inline-block px-4 py-1 mb-6 border border-neon-green/50 rounded-full bg-green-900/20 backdrop-blur-sm">
-            <span class="text-neon-green font-bold text-sm tracking-wide uppercase"><i class="fas fa-bolt mr-2"></i>Bêta dispo sur iOS & Android</span>
+                <span class="text-neon-green font-bold text-sm tracking-wide uppercase">
+                    <i class="fas fa-bolt mr-2"></i><span data-i18n="hero_beta">Bêta dispo sur iOS & Android</span>
+                </span>
         </div>
         <h1 class="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
-            Tes déchets paient <br>
-            <span class="purple-glow text-neon-purple">TA SOIRÉE.</span>
+            <span data-i18n="hero_h1_1">Tes déchets paient</span> <br>
+            <span class="purple-glow text-neon-purple" data-i18n="hero_h1_2">TA SOIRÉE.</span>
         </h1>
-        <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto font-light">
+        <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto font-light" data-i18n="hero_sub">
             Ne jette plus par obligation. Trie pour la gratification. <br>Transforme chaque canette en entrée VIP à Lloret.
         </p>
         <div class="flex flex-col md:flex-row gap-4 justify-center">
             <button class="bg-neon-green text-black font-black py-4 px-10 rounded-full text-lg hover:scale-105 transition transform shadow-[0_0_20px_rgba(57,255,20,0.6)]">
-                <i class="fas fa-qrcode mr-2"></i> COMMENCER À SCANNER
+                <i class="fas fa-qrcode mr-2"></i> <span data-i18n="cta_scan">COMMENCER À SCANNER</span>
             </button>
-            <button class="border border-white/20 hover:border-white hover:bg-white/5 text-white font-bold py-4 px-10 rounded-full text-lg transition">
+            <button class="border border-white/20 hover:border-white hover:bg-white/5 text-white font-bold py-4 px-10 rounded-full text-lg transition" data-i18n="cta_demo">
                 Voir la démo
             </button>
         </div>
@@ -93,19 +130,19 @@
     <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         <div>
             <div class="text-3xl font-black text-white">2.5 T</div>
-            <div class="text-sm text-gray-400 uppercase tracking-widest">Déchets Recyclés</div>
+            <div class="text-sm text-gray-400 uppercase tracking-widest" data-i18n="metric_waste">Déchets Recyclés</div>
         </div>
         <div>
             <div class="text-3xl font-black text-white">15k €</div>
-            <div class="text-sm text-gray-400 uppercase tracking-widest">Rewards Distribués</div>
+            <div class="text-sm text-gray-400 uppercase tracking-widest" data-i18n="metric_rewards">Rewards Distribués</div>
         </div>
         <div>
             <div class="text-3xl font-black text-white">50+</div>
-            <div class="text-sm text-gray-400 uppercase tracking-widest">Clubs Partenaires</div>
+            <div class="text-sm text-gray-400 uppercase tracking-widest" data-i18n="metric_partners">Clubs Partenaires</div>
         </div>
         <div>
             <div class="text-3xl font-black text-white">100%</div>
-            <div class="text-sm text-gray-400 uppercase tracking-widest">Validé par l'IA</div>
+            <div class="text-sm text-gray-400 uppercase tracking-widest" data-i18n="metric_ai">Validé par l'IA</div>
         </div>
     </div>
 </div>
@@ -118,8 +155,11 @@
                 <img src="https://images.unsplash.com/photo-1528323273322-d81458248d40?q=80&w=2129&auto=format&fit=crop" alt="Trash on beach vs Club" class="relative rounded-2xl shadow-2xl border border-white/10 grayscale hover:grayscale-0 transition duration-500 transform hover:scale-[1.02]">
             </div>
             <div>
-                <h2 class="text-4xl font-black text-white mb-6">Sauve la plage, <span class="text-neon-green">gagne le club.</span></h2>
-                <p class="text-gray-400 text-lg mb-6 leading-relaxed">
+                <h2 class="text-4xl font-black text-white mb-6">
+                    <span data-i18n="concept_title_1">Sauve la plage,</span>
+                    <span class="text-neon-green" data-i18n="concept_title_2">gagne le club.</span>
+                </h2>
+                <p class="text-gray-400 text-lg mb-6 leading-relaxed" data-i18n="concept_desc">
                     Lloret est notre terrain de jeu. Mais personne n'aime danser au milieu des déchets. Le deal est simple : Tu nettoies la ville, la ville te le rend bien.
                 </p>
                 <div class="space-y-4">
@@ -128,8 +168,8 @@
                             <i class="fas fa-trash-alt text-xl"></i>
                         </div>
                         <div class="ml-4">
-                            <h4 class="text-xl font-bold text-white">Stop au Gâchis</h4>
-                            <p class="text-gray-400 text-sm">Une canette vide n'est pas un déchet, c'est de l'or qui traîne.</p>
+                            <h4 class="text-xl font-bold text-white" data-i18n="concept_sub1_title">Stop au Gâchis</h4>
+                            <p class="text-gray-400 text-sm" data-i18n="concept_sub1_desc">Une canette vide n'est pas un déchet, c'est de l'or qui traîne.</p>
                         </div>
                     </div>
                     <div class="flex items-start">
@@ -137,8 +177,8 @@
                             <i class="fas fa-cocktail text-xl"></i>
                         </div>
                         <div class="ml-4">
-                            <h4 class="text-xl font-bold text-white">Pouvoir d'achat</h4>
-                            <p class="text-gray-400 text-sm">Finance tes sorties simplement en faisant le bon geste.</p>
+                            <h4 class="text-xl font-bold text-white" data-i18n="concept_sub2_title">Pouvoir d'achat</h4>
+                            <p class="text-gray-400 text-sm" data-i18n="concept_sub2_desc">Finance tes sorties simplement en faisant le bon geste.</p>
                         </div>
                     </div>
                 </div>
@@ -149,33 +189,29 @@
 
 <section id="how" class="py-20 bg-card-bg relative overflow-hidden">
     <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-neon-purple/10 rounded-full blur-3xl"></div>
-
     <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
-        <h2 class="text-4xl font-black text-white mb-16">LE <span class="gradient-text">GAMEPLAY</span></h2>
-
+        <h2 class="text-4xl font-black text-white mb-16">LE <span class="gradient-text" data-i18n="gameplay_title">GAMEPLAY</span></h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="bg-dark-bg p-8 rounded-2xl border border-white/5 hover:border-neon-green/50 transition duration-300 group">
                 <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-neon-green group-hover:text-black transition-colors text-3xl text-white">
                     <i class="fas fa-expand"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-white mb-4">1. Scan & Target</h3>
-                <p class="text-gray-400">Scanne le code-barres de ton déchet ou le QR Code de la Smart-Bin.</p>
+                <p class="text-gray-400" data-i18n="step1_desc">Scanne le code-barres de ton déchet ou le QR Code de la Smart-Bin.</p>
             </div>
-
             <div class="bg-dark-bg p-8 rounded-2xl border border-white/5 hover:border-neon-purple/50 transition duration-300 group">
                 <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-neon-purple group-hover:text-white transition-colors text-3xl text-white">
                     <i class="fas fa-robot"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-white mb-4">2. Drop & Verify</h3>
-                <p class="text-gray-400">Jette dans la poubelle. L'IA et les capteurs valident que tu ne triches pas.</p>
+                <p class="text-gray-400" data-i18n="step2_desc">Jette dans la poubelle. L'IA et les capteurs valident que tu ne triches pas.</p>
             </div>
-
             <div class="bg-dark-bg p-8 rounded-2xl border border-white/5 hover:border-yellow-400/50 transition duration-300 group">
                 <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-yellow-400 group-hover:text-black transition-colors text-3xl text-white">
                     <i class="fas fa-fire"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-white mb-4">3. Burn & Earn</h3>
-                <p class="text-gray-400">Reçois tes Eco-Points instantanément et brûle-les pour des rewards.</p>
+                <p class="text-gray-400" data-i18n="step3_desc">Reçois tes Eco-Points instantanément et brûle-les pour des rewards.</p>
             </div>
         </div>
     </div>
@@ -186,14 +222,14 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div>
                 <h3 class="text-neon-green font-bold tracking-widest uppercase mb-2">Anti-Cheat System</h3>
-                <h2 class="text-3xl font-black text-white mb-4">Plus intelligent que ton ex.</h2>
-                <p class="text-gray-400 mb-6">
+                <h2 class="text-3xl font-black text-white mb-4" data-i18n="tech_title">Plus intelligent que ton ex.</h2>
+                <p class="text-gray-400 mb-6" data-i18n="tech_desc">
                     Notre technologie de pointe assure l'intégrité du jeu. Pas de triche possible.
                 </p>
                 <ul class="space-y-3">
-                    <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-neon-purple mr-3"></i> IA Vision (Reconnaissance d'image)</li>
-                    <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-neon-purple mr-3"></i> Capteurs acoustiques & de poids</li>
-                    <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-neon-purple mr-3"></i> Peer-Review Social</li>
+                    <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-neon-purple mr-3"></i> <span data-i18n="tech_list1">IA Vision (Reconnaissance d'image)</span></li>
+                    <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-neon-purple mr-3"></i> <span data-i18n="tech_list2">Capteurs acoustiques & de poids</span></li>
+                    <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-neon-purple mr-3"></i> <span data-i18n="tech_list3">Peer-Review Social</span></li>
                 </ul>
             </div>
             <div class="relative bg-black rounded-xl h-64 flex items-center justify-center border border-gray-700">
@@ -209,8 +245,8 @@
 
 <section id="rewards" class="py-20 bg-card-bg">
     <div class="max-w-7xl mx-auto px-4 text-center">
-        <h2 class="text-4xl font-black text-white mb-4">LE <span class="text-yellow-400">LOOT SHOP</span></h2>
-        <p class="text-gray-400 mb-12">Voici ce que tu peux t'offrir ce soir.</p>
+        <h2 class="text-4xl font-black text-white mb-4">LE <span class="text-yellow-400" data-i18n="loot_title">LOOT SHOP</span></h2>
+        <p class="text-gray-400 mb-12" data-i18n="loot_subtitle">Voici ce que tu peux t'offrir ce soir.</p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <div class="bg-dark-bg rounded-xl overflow-hidden border border-white/5 hover:scale-105 transition duration-300">
@@ -219,11 +255,11 @@
                     <span class="absolute top-2 right-2 bg-yellow-400 text-black font-bold px-2 py-1 rounded text-xs">HOT</span>
                 </div>
                 <div class="p-6 text-left">
-                    <h4 class="text-xl font-bold text-white">1 Cerveza Offerte</h4>
+                    <h4 class="text-xl font-bold text-white" data-i18n="rew1_title">1 Cerveza Offerte</h4>
                     <p class="text-gray-500 text-sm mb-4">Chez Bar Example • Lloret Centre</p>
                     <div class="flex justify-between items-center">
                         <span class="text-neon-green font-bold">500 XP</span>
-                        <button class="text-white text-sm bg-white/10 px-3 py-1 rounded hover:bg-white/20">Réserver</button>
+                        <button class="text-white text-sm bg-white/10 px-3 py-1 rounded hover:bg-white/20" data-i18n="btn_reserve">Réserver</button>
                     </div>
                 </div>
             </div>
@@ -233,7 +269,7 @@
                     <img src="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?q=80&w=2029&auto=format&fit=crop" class="w-full h-full object-cover">
                 </div>
                 <div class="p-6 text-left">
-                    <h4 class="text-xl font-bold text-white">Entrée VIP + Coupe-file</h4>
+                    <h4 class="text-xl font-bold text-white" data-i18n="rew2_title">Entrée VIP + Coupe-file</h4>
                     <p class="text-gray-500 text-sm mb-4">Disco Tropics • Main Floor</p>
                     <div class="flex justify-between items-center">
                         <span class="text-neon-green font-bold">1500 XP</span>
@@ -247,11 +283,11 @@
                     <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1965&auto=format&fit=crop" class="w-full h-full object-cover">
                 </div>
                 <div class="p-6 text-left">
-                    <h4 class="text-xl font-bold text-white">-50% Menu Burger</h4>
+                    <h4 class="text-xl font-bold text-white" data-i18n="rew3_title">-50% Menu Burger</h4>
                     <p class="text-gray-500 text-sm mb-4">Burger King • Front de mer</p>
                     <div class="flex justify-between items-center">
                         <span class="text-neon-green font-bold">2000 XP</span>
-                        <button class="text-white text-sm bg-white/10 px-3 py-1 rounded hover:bg-white/20">Réserver</button>
+                        <button class="text-white text-sm bg-white/10 px-3 py-1 rounded hover:bg-white/20" data-i18n="btn_reserve">Réserver</button>
                     </div>
                 </div>
             </div>
@@ -261,15 +297,189 @@
 
 <footer class="bg-dark-bg py-10 border-t border-white/10">
     <div class="max-w-7xl mx-auto px-4 text-center">
-        <h2 class="text-2xl font-black text-white mb-6">Prêt à changer la donne ?</h2>
-        <button class="bg-neon-green text-black font-bold py-3 px-8 rounded-full mb-8 hover:bg-green-400 transition">
+        <h2 class="text-2xl font-black text-white mb-6" data-i18n="footer_title">Prêt à changer la donne ?</h2>
+        <button class="bg-neon-green text-black font-bold py-3 px-8 rounded-full mb-8 hover:bg-green-400 transition" data-i18n="footer_cta">
             Rejoins la Squad Eco-Lloret
         </button>
-        <p class="text-gray-600 text-sm">
+        <p class="text-gray-600 text-sm" data-i18n="footer_copy">
             © 2024 Eco-Lloret Project. Fabriqué avec <i class="fas fa-heart text-red-500"></i> et <i class="fas fa-recycle text-green-500"></i> sous le soleil.
         </p>
     </div>
 </footer>
+
+<script>
+    // --- 1. CONFIGURATION LANGUES ---
+    const translations = {
+        fr: {
+            nav_concept: "Le Concept",
+            nav_gameplay: "Gameplay",
+            nav_loot: "Loot",
+            nav_download: "Télécharger l'App",
+            hero_beta: "Bêta dispo sur iOS & Android",
+            hero_h1_1: "Tes déchets paient",
+            hero_h1_2: "TA SOIRÉE.",
+            hero_sub: "Ne jette plus par obligation. Trie pour la gratification. <br>Transforme chaque canette en entrée VIP à Lloret.",
+            cta_scan: "COMMENCER À SCANNER",
+            cta_demo: "Voir la démo",
+            metric_waste: "Déchets Recyclés",
+            metric_rewards: "Rewards Distribués",
+            metric_partners: "Clubs Partenaires",
+            metric_ai: "Validé par l'IA",
+            concept_title_1: "Sauve la plage,",
+            concept_title_2: "gagne le club.",
+            concept_desc: "Lloret est notre terrain de jeu. Mais personne n'aime danser au milieu des déchets. Le deal est simple : Tu nettoies la ville, la ville te le rend bien.",
+            concept_sub1_title: "Stop au Gâchis",
+            concept_sub1_desc: "Une canette vide n'est pas un déchet, c'est de l'or qui traîne.",
+            concept_sub2_title: "Pouvoir d'achat",
+            concept_sub2_desc: "Finance tes sorties simplement en faisant le bon geste.",
+            gameplay_title: "GAMEPLAY",
+            step1_desc: "Scanne le code-barres de ton déchet ou le QR Code de la Smart-Bin.",
+            step2_desc: "Jette dans la poubelle. L'IA et les capteurs valident que tu ne triches pas.",
+            step3_desc: "Reçois tes Eco-Points instantanément et brûle-les pour des rewards.",
+            tech_title: "Plus intelligent que ton ex.",
+            tech_desc: "Notre technologie de pointe assure l'intégrité du jeu. Pas de triche possible.",
+            tech_list1: "IA Vision (Reconnaissance d'image)",
+            tech_list2: "Capteurs acoustiques & de poids",
+            tech_list3: "Peer-Review Social",
+            loot_title: "LOOT SHOP",
+            loot_subtitle: "Voici ce que tu peux t'offrir ce soir.",
+            rew1_title: "1 Cerveza Offerte",
+            rew2_title: "Entrée VIP + Coupe-file",
+            rew3_title: "-50% Menu Burger",
+            btn_reserve: "Réserver",
+            footer_title: "Prêt à changer la donne ?",
+            footer_cta: "Rejoins la Squad Eco-Lloret",
+            footer_copy: "© 2024 Eco-Lloret Project. Fabriqué avec <i class='fas fa-heart text-red-500'></i> et <i class='fas fa-recycle text-green-500'></i> sous le soleil."
+        },
+        en: {
+            nav_concept: "The Concept",
+            nav_gameplay: "Gameplay",
+            nav_loot: "Loot",
+            nav_download: "Download App",
+            hero_beta: "Beta available on iOS & Android",
+            hero_h1_1: "Your trash pays",
+            hero_h1_2: "FOR YOUR NIGHT.",
+            hero_sub: "Don't recycle out of duty. Do it for the reward. <br>Turn every can into a VIP entry in Lloret.",
+            cta_scan: "START SCANNING",
+            cta_demo: "Watch Demo",
+            metric_waste: "Waste Recycled",
+            metric_rewards: "Rewards Given",
+            metric_partners: "Partner Clubs",
+            metric_ai: "AI Verified",
+            concept_title_1: "Save the beach,",
+            concept_title_2: "earn the club.",
+            concept_desc: "Lloret is our playground. But nobody likes dancing in trash. The deal is simple: You clean the city, the city pays you back.",
+            concept_sub1_title: "Stop the Waste",
+            concept_sub1_desc: "An empty can isn't trash, it's gold lying on the ground.",
+            concept_sub2_title: "Purchasing Power",
+            concept_sub2_desc: "Fund your night out simply by doing the right thing.",
+            gameplay_title: "GAMEPLAY",
+            step1_desc: "Scan the product barcode or the Smart-Bin QR Code.",
+            step2_desc: "Drop it in the bin. AI and sensors verify you aren't cheating.",
+            step3_desc: "Get Eco-Points instantly and burn them for rewards.",
+            tech_title: "Smarter than your ex.",
+            tech_desc: "Our cutting-edge tech ensures game integrity. No cheating allowed.",
+            tech_list1: "AI Vision (Image Recognition)",
+            tech_list2: "Acoustic & Weight Sensors",
+            tech_list3: "Social Peer-Review",
+            loot_title: "LOOT SHOP",
+            loot_subtitle: "Here is what you can afford tonight.",
+            rew1_title: "1 Free Beer",
+            rew2_title: "VIP Entry + Fast Pass",
+            rew3_title: "-50% Burger Menu",
+            btn_reserve: "Reserve",
+            footer_title: "Ready to change the game?",
+            footer_cta: "Join the Eco-Lloret Squad",
+            footer_copy: "© 2024 Eco-Lloret Project. Made with <i class='fas fa-heart text-red-500'></i> and <i class='fas fa-recycle text-green-500'></i> under the sun."
+        },
+        es: {
+            nav_concept: "El Concepto",
+            nav_gameplay: "Gameplay",
+            nav_loot: "Loot",
+            nav_download: "Descargar App",
+            hero_beta: "Beta disponible en iOS y Android",
+            hero_h1_1: "Tus residuos pagan",
+            hero_h1_2: "TU NOCHE.",
+            hero_sub: "No recicles por obligación. Hazlo por la recompensa. <br>Convierte cada lata en una entrada VIP en Lloret.",
+            cta_scan: "EMPEZAR A ESCANEAR",
+            cta_demo: "Ver Demo",
+            metric_waste: "Residuos Reciclados",
+            metric_rewards: "Premios Entregados",
+            metric_partners: "Clubes Socios",
+            metric_ai: "Verificado por IA",
+            concept_title_1: "Salva la playa,",
+            concept_title_2: "gana la fiesta.",
+            concept_desc: "Lloret es nuestro patio de recreo. Pero a nadie le gusta bailar entre basura. El trato es simple: Tú limpias la ciudad, la ciudad te recompensa.",
+            concept_sub1_title: "Fin del Desperdicio",
+            concept_sub1_desc: "Una lata vacía no es basura, es oro tirado en el suelo.",
+            concept_sub2_title: "Poder Adquisitivo",
+            concept_sub2_desc: "Financia tus salidas simplemente haciendo lo correcto.",
+            gameplay_title: "GAMEPLAY",
+            step1_desc: "Escanea el código de barras o el QR de la papelera.",
+            step2_desc: "Tíralo. La IA y los sensores verifican que no hagas trampas.",
+            step3_desc: "Recibe Eco-Points al instante y quémalos por premios.",
+            tech_title: "Más lista que tu ex.",
+            tech_desc: "Nuestra tecnología punta asegura la integridad del juego. Sin trampas.",
+            tech_list1: "Visión IA (Reconocimiento de imagen)",
+            tech_list2: "Sensores acústicos y de peso",
+            tech_list3: "Revisión Social (Peer-Review)",
+            loot_title: "LOOT SHOP",
+            loot_subtitle: "Esto es lo que puedes permitirte esta noche.",
+            rew1_title: "1 Cerveza Gratis",
+            rew2_title: "Entrada VIP + Cola Rápida",
+            rew3_title: "-50% Menú Burger",
+            btn_reserve: "Reservar",
+            footer_title: "¿Listo para cambiar el juego?",
+            footer_cta: "Únete al Squad Eco-Lloret",
+            footer_copy: "© 2024 Eco-Lloret Project. Hecho con <i class='fas fa-heart text-red-500'></i> y <i class='fas fa-recycle text-green-500'></i> bajo el sol."
+        }
+    };
+
+    const languageSelector = document.getElementById('language-selector');
+
+    languageSelector.addEventListener('change', (e) => {
+        const lang = e.target.value;
+        updateLanguage(lang);
+    });
+
+    function updateLanguage(lang) {
+        const elements = document.querySelectorAll('[data-i18n]');
+        elements.forEach(element => {
+            const key = element.getAttribute('data-i18n');
+            if (translations[lang] && translations[lang][key]) {
+                element.innerHTML = translations[lang][key];
+            }
+        });
+    }
+
+    // --- 2. GESTION DU MENU MOBILE ---
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const icon = btn.querySelector('i');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    // Toggle Open/Close
+    btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        // Change icone (Bars vs Times/Cross)
+        if(menu.classList.contains('hidden')){
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        } else {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        }
+    });
+
+    // Fermer le menu quand on clique sur un lien
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.add('hidden');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        });
+    });
+</script>
 
 </body>
 </html>
